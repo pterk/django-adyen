@@ -55,8 +55,8 @@ class PaymentInterface(object):
     def __init__(self, secret, data, testing=True, onepage=True):
         assert dict(data), 'Data not a dict-like object.'
         assert str(secret), 'Secret not a string-like object.'
-        assert bool(testing)
-        assert bool(onepage)
+        assert bool(testing) in (True, False)
+        assert bool(onepage) in (True, False)
 
         self.secret = secret
         self.data = data
